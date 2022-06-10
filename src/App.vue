@@ -1,21 +1,19 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
 </script>
 
 <template>
-
+  <img src="./bg_top.png" alt="">
+  <h1 class="text-3xl font-bold underline text-white">
+    Hello world!
+  </h1>
 </template>
 
-<style>
+<style lang="scss">
 #app {
-
-}
-body{
-  margin: 0;
-    width: 1920px;
-    height: 1080px;
-    border: 1px solid red;
-}
+  background: #0b122e;
+  height: 100%;
+}  img {
+    width: 100%;
+  }
 </style>
