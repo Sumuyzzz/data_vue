@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import Header from "./Header.vue"
+import Main from "./Main.vue"
+
+
 </script>
 
 <template>
   <Header></Header>
-  <main>
-
-  </main>
+  <Main></Main>
   <footer></footer>
 </template>
 
@@ -14,6 +15,9 @@ import Header from "./Header.vue"
 #app {
   background: #0b122e;
   height: 100%;
+  display:flex;
+  flex-direction: column;
+
 
 
 }

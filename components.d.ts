@@ -5,7 +5,8 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Header: typeof import('./src/view/Header.vue')['default']
+    Map: typeof import('./src/components/Map.vue')['default']
+    MapList: typeof import('./src/components/MapList.vue')['default']
   }
 }
 
