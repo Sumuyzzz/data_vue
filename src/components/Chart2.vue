@@ -1,9 +1,9 @@
 <template>
-  <v-chart :option="option" :autoresize="true" class="chartss"></v-chart>
+  <v-chart :option="option" :autoresize="true" ref="pie"></v-chart>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref,onMounted } from "vue";
 import VChart from "vue-echarts"
 
 
@@ -13,9 +13,6 @@ const data = [
   { value: 32, name: '负跳变' },
   { value: 30, name: '正跳变' },
 ]
-
-
-
 
 const option = ref({
   grid: {
@@ -55,16 +52,55 @@ const option = ref({
         },
       },
       data: data,
-
     }
-  ]
+  ],
+  graphic: {
+    elements: [
+      {
+        type: 'group',
+        left: 'center',
+        top: 'center',
+        children: [
+          {
+            type: 'text',
+            id: 'text1',
+          },
+          {
+            type: 'text',
+            id: 'text2',
+
+          }
+        ]
+      }
+    ]
+  }
 })
+
+
+const pie = ref(null)
+onMounted(() => {
+  let dataIndex = 0
+  setInterval(function () {
+    pie.value.dispatchAction({
+      type: 'downplay',
+      seriesIndex: 0,
+      dataIndex
+    })
+    dataIndex = dataIndex >= data.length - 1 ? 0 : (dataIndex + 1)
+    pie.value.dispatchAction({
+      type: 'highlight',
+      seriesIndex: 0,
+      dataIndex
+    })
+  }, 1000)
+})
+
+
+
+
+
 
 </script>
 
 <style lang="scss" scoped>
-
-
-
-
 </style>
