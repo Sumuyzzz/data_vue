@@ -15,7 +15,7 @@ import Main from "./Main.vue"
 #app {
   background: #0b122e;
   height: 100%;
-  display: flex;
+  display:flex;
   flex-direction: column;
 
 

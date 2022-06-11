@@ -14,10 +14,12 @@ import {
 import {
   GridComponent,
   TooltipComponent,
-  LegendComponent
+  LegendComponent,
+  TitleComponent
 } from 'echarts/components'
 
 use([
+  TitleComponent,
   CanvasRenderer,
   BarChart,
   PieChart ,

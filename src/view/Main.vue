@@ -5,7 +5,7 @@
         <Chart1></Chart1>
       </div>
       <div class="chart2 chart">
-
+        <Chart2></Chart2>
       </div>
       <div class="chart3 chart"></div>
     </div>
@@ -25,7 +25,7 @@
 
 <script setup>
 import Chart1 from "@/components/Chart1.vue"
-
+import Chart2 from "@/components/Chart2.vue"
 </script>
 
 <style lang="scss" scoped>

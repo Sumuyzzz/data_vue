@@ -6,6 +6,7 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Chart1: typeof import('./src/components/Chart1.vue')['default']
+    Chart2: typeof import('./src/components/Chart2.vue')['default']
     Map: typeof import('./src/components/Map.vue')['default']
     MapList: typeof import('./src/components/MapList.vue')['default']
   }

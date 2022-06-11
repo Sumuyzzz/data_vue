@@ -1,5 +1,5 @@
 <template>
-  <v-chart class="chart" :option="option" />
+  <v-chart class="chart" :option="option" :autoresize="true"/>
 </template>
 
 
@@ -9,13 +9,20 @@ import { ref } from 'vue';
 
 
 
+
+
+
 let data = [
   { value: 50, name: '在线率' },
   { value: 30, name: '离线率' },
-
 ]
 
+
+
+
+
 let option = ref({
+
   tooltip: {
     trigger: 'item'
   },
@@ -57,11 +64,17 @@ let option = ref({
 
 
 
+const randomNumber = () => Math.floor(Math.random()*100)
 
 
+const updated=()=> {
+ option.value.series[0].data.forEach(i=>i.value=randomNumber()) 
+}
 
 
-
+setInterval(() => {
+  updated()
+},1000)
 
 
 
