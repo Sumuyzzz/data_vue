@@ -11,7 +11,7 @@
     </div>
     <div class="wrapper-map">
       <div class="map chart">
-
+        <Map></Map>
       </div>
       <div class="map-list chart"></div>
     </div>
@@ -26,6 +26,7 @@
 <script setup>
 import Chart1 from "@/components/Chart1.vue"
 import Chart2 from "@/components/Chart2.vue"
+import Map from "@/components/Map.vue"
 </script>
 
 <style lang="scss" scoped>

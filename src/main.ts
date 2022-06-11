@@ -9,13 +9,18 @@ import {
 } from 'echarts/renderers'
 import {
   BarChart,
-  PieChart
+  PieChart,
+  ScatterChart,
+  EffectScatterChart
 } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   LegendComponent,
-  TitleComponent
+  TitleComponent,
+  GraphicComponent,
+  GeoComponent,
+  VisualMapComponent
 } from 'echarts/components'
 
 use([
@@ -25,7 +30,12 @@ use([
   PieChart ,
   GridComponent,
   TooltipComponent,
-  LegendComponent
+  LegendComponent,
+  GraphicComponent,
+  GeoComponent,
+  ScatterChart,
+  VisualMapComponent,
+  EffectScatterChart
 ])
 
 

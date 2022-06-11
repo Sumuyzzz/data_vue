@@ -9,9 +9,6 @@ import { ref } from 'vue';
 
 
 
-
-
-
 let data = [
   { value: 50, name: '在线率' },
   { value: 30, name: '离线率' },
@@ -20,9 +17,7 @@ let data = [
 
 
 
-
 let option = ref({
-
   tooltip: {
     trigger: 'item'
   },

@@ -15,10 +15,6 @@ const data = [
 ]
 
 const option = ref({
-  grid: {
-    width: "5%",
-    height: "4%"
-  },
   title: {
     text: '设备在线状态',
     left: 'center',
@@ -27,10 +23,6 @@ const option = ref({
     }
   },
   legend: {
-    grid: {
-      width: "5%",
-      height: "4%"
-    },
     top: 'bottom',
     textStyle: {
       color: '#fff'
@@ -38,14 +30,11 @@ const option = ref({
   },
   series: [
     {
-      name: 'Nightingale Chart',
       type: 'pie',
-      radius: [35, 100],
+      radius: [30, 60],
       center: ['50%', '50%'],
       roseType: 'area',
-      itemStyle: {
-        borderRadius: 4,
-      },
+
       label: {
         textStyle: {
           color: '#fff'
@@ -68,7 +57,6 @@ const option = ref({
           {
             type: 'text',
             id: 'text2',
-
           }
         ]
       }
