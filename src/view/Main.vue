@@ -1,12 +1,18 @@
 <template>
   <main>
     <div class="left-charts">
-      <div class="chart1 chart"></div>
-      <div class="chart2 chart"></div>
+      <div class="chart1 chart">
+        <Chart1></Chart1>
+      </div>
+      <div class="chart2 chart">
+
+      </div>
       <div class="chart3 chart"></div>
     </div>
     <div class="wrapper-map">
-      <div class="map chart"></div>
+      <div class="map chart">
+
+      </div>
       <div class="map-list chart"></div>
     </div>
     <div class="right-charts">
@@ -18,12 +24,13 @@
 </template>
 
 <script setup>
+import Chart1 from "@/components/Chart1.vue"
 
 </script>
 
 <style lang="scss" scoped>
 main {
-  gap:30px;
+  gap: 30px;
   display: flex;
   flex: 1;
 
