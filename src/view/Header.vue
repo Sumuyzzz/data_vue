@@ -1,7 +1,6 @@
 <template>
   <header>
     <h1>物联网平台</h1>
-    <img src="@/assets/bg_top.png" alt="">
   </header>
 </template>
 
@@ -13,10 +12,7 @@
 header {
   padding: 0;
   position: relative;
-
-  img {
-    width: 100%;
-  }
+  
 
   h1 {
     position: absolute;

@@ -28,7 +28,6 @@ const sortData = () => convertData(
 
 let option = ref({
 
-  backgroundColor: '#404a59',
   title: {
     text: '平台数据分布',
     subtext:'数据仅限参考',
@@ -135,7 +134,7 @@ let option = ref({
           shadowColor: '#333',
         },
       },
-      zlevel: 1,
+
     },
   ],
 })

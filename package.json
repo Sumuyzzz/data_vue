@@ -10,7 +10,9 @@
   "dependencies": {
     "echarts": "^5.3.2",
     "vue": "^3.2.25",
-    "vue-echarts": "^6.0.3"
+    "vue-echarts": "^6.0.3",
+    "vxe-table": "4.2.6",
+    "xe-utils": "^3.5.4"
   },
   "devDependencies": {
     "@types/sass": "^1.43.1",
