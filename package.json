@@ -9,12 +9,13 @@
   },
   "dependencies": {
     "echarts": "^5.3.2",
+    "oh-vue-icons": "1.0.0-rc3",
     "vue": "^3.2.25",
     "vue-echarts": "^6.0.3",
-    "vxe-table": "4.2.6",
-    "xe-utils": "^3.5.4"
+    "vue3-seamless-scroll": "^1.2.0"
   },
   "devDependencies": {
+    "@iconify/vue": "^3.2.1",
     "@types/sass": "^1.43.1",
     "@vitejs/plugin-vue": "^2.3.3",
     "postcss": "^8.4.14",

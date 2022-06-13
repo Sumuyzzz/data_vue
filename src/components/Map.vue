@@ -1,5 +1,5 @@
 <template>
-<v-chart :option="option"></v-chart>
+  <v-chart :option="option"></v-chart>
 </template>
 
 <script setup>
@@ -18,19 +18,19 @@ registerMap("china", chinaMap);
 
 
 const sortData = () => convertData(
-    data
-      .sort(function (a, b) {
-        return b.value - a.value;
-      })
-      .slice(0, 10)
-  )
+  data
+    .sort(function (a, b) {
+      return b.value - a.value;
+    })
+    .slice(0, 10)
+)
 
 
 let option = ref({
 
   title: {
     text: '平台数据分布',
-    subtext:'数据仅限参考',
+    subtext: '数据仅限参考',
     left: 'center',
     textStyle: {
       color: '#fff',
@@ -146,5 +146,4 @@ let option = ref({
 </script>
 
 <style lang="scss" scoped>
-
 </style>

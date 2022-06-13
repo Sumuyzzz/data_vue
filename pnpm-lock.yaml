@@ -1,9 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify/vue': ^3.2.1
   '@types/sass': ^1.43.1
   '@vitejs/plugin-vue': ^2.3.3
   echarts: ^5.3.2
+  oh-vue-icons: 1.0.0-rc3
   postcss: ^8.4.14
   postcss-px-to-viewport: ^1.1.1
   sass: ^1.52.3
@@ -14,17 +16,17 @@ specifiers:
   vue: ^3.2.25
   vue-echarts: ^6.0.3
   vue-tsc: ^0.34.7
-  vxe-table: 4.2.6
-  xe-utils: ^3.5.4
+  vue3-seamless-scroll: ^1.2.0
 
 dependencies:
   echarts: registry.npmmirror.com/echarts/5.3.2
+  oh-vue-icons: registry.npmmirror.com/oh-vue-icons/1.0.0-rc3_vue@3.2.37
   vue: registry.npmmirror.com/vue/3.2.37
   vue-echarts: registry.npmmirror.com/vue-echarts/6.0.3_echarts@5.3.2+vue@3.2.37
-  vxe-table: registry.npmmirror.com/vxe-table/4.2.6_vue@3.2.37+xe-utils@3.5.4
-  xe-utils: registry.npmmirror.com/xe-utils/3.5.4
+  vue3-seamless-scroll: registry.npmmirror.com/vue3-seamless-scroll/1.2.0
 
 devDependencies:
+  '@iconify/vue': registry.npmmirror.com/@iconify/vue/3.2.1_vue@3.2.37
   '@types/sass': registry.npmmirror.com/@types/sass/1.43.1
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.3.3_vite@2.9.11+vue@3.2.37
   postcss: registry.npmmirror.com/postcss/8.4.14
@@ -67,6 +69,17 @@ packages:
     dependencies:
       '@babel/helper-validator-identifier': registry.npmmirror.com/@babel/helper-validator-identifier/7.16.7
       to-fast-properties: registry.npmmirror.com/to-fast-properties/2.0.0
+
+  registry.npmmirror.com/@iconify/vue/3.2.1_vue@3.2.37:
+    resolution: {integrity: sha512-c4R6ZgFo1JrJ8aPMMgOPgfU7lBswihMGR+yWe/P4ZukC3kTkeT4+lkt9Pc/itVFMkwva/S/7u9YofmYv57fnNQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/vue/-/vue-3.2.1.tgz}
+    id: registry.npmmirror.com/@iconify/vue/3.2.1
+    name: '@iconify/vue'
+    version: 3.2.1
+    peerDependencies:
+      vue: 3.x
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.37
+    dev: true
 
   registry.npmmirror.com/@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz}
@@ -827,6 +840,22 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  registry.npmmirror.com/oh-vue-icons/1.0.0-rc3_vue@3.2.37:
+    resolution: {integrity: sha512-+k2YC6piK7sEZnwbkQF3UokFPMmgqpiLP6f/H0ovQFLl20QA5V4U8EcI6EclD2Lt5NMQ3k6ilLGo8XyXqdVSvg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/oh-vue-icons/-/oh-vue-icons-1.0.0-rc3.tgz}
+    id: registry.npmmirror.com/oh-vue-icons/1.0.0-rc3
+    name: oh-vue-icons
+    version: 1.0.0-rc3
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.37
+      vue-demi: registry.npmmirror.com/vue-demi/0.12.5_vue@3.2.37
+    dev: false
+
   registry.npmmirror.com/path-parse/1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/path-parse/-/path-parse-1.0.7.tgz}
     name: path-parse
@@ -992,6 +1021,13 @@ packages:
     version: 1.0.0
     engines: {node: '>= 0.4'}
     dev: true
+
+  registry.npmmirror.com/throttle-debounce/3.0.1:
+    resolution: {integrity: sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/throttle-debounce/-/throttle-debounce-3.0.1.tgz}
+    name: throttle-debounce
+    version: 3.0.1
+    engines: {node: '>=10'}
+    dev: false
 
   registry.npmmirror.com/to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz}
@@ -1221,17 +1257,12 @@ packages:
       '@vue/server-renderer': registry.npmmirror.com/@vue/server-renderer/3.2.37_vue@3.2.37
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.37
 
-  registry.npmmirror.com/vxe-table/4.2.6_vue@3.2.37+xe-utils@3.5.4:
-    resolution: {integrity: sha512-hxjwJIanUn9KWU0+twHQ12YHZhjrWLTFwJos8m2RSrA9YV3UfHg15dmQYSsvDE9/x5NDDCoDOxpQi/dhp7aZvQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vxe-table/-/vxe-table-4.2.6.tgz}
-    id: registry.npmmirror.com/vxe-table/4.2.6
-    name: vxe-table
-    version: 4.2.6
-    peerDependencies:
-      vue: ^3.2.2
-      xe-utils: ^3.5.0
+  registry.npmmirror.com/vue3-seamless-scroll/1.2.0:
+    resolution: {integrity: sha512-2cKeIN5XjnYI08R0RVbvgpc1kgxp2zmE8CNeRVXvPk9lWox8m6bvYDCXrjl7q1qXXFh0KccBbJ7iFa1n5tu0RQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue3-seamless-scroll/-/vue3-seamless-scroll-1.2.0.tgz}
+    name: vue3-seamless-scroll
+    version: 1.2.0
     dependencies:
-      vue: registry.npmmirror.com/vue/3.2.37
-      xe-utils: registry.npmmirror.com/xe-utils/3.5.4
+      throttle-debounce: registry.npmmirror.com/throttle-debounce/3.0.1
     dev: false
 
   registry.npmmirror.com/webpack-sources/3.2.3:
@@ -1246,12 +1277,6 @@ packages:
     name: webpack-virtual-modules
     version: 0.4.3
     dev: true
-
-  registry.npmmirror.com/xe-utils/3.5.4:
-    resolution: {integrity: sha512-oH7VOgvHv34pn198dhKPVKnuEHV22Q06YpCTVnAS3JuutylmZj/rtJGvn0BxxWQ37w2LgCknoebLA4uIGXwFtw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/xe-utils/-/xe-utils-3.5.4.tgz}
-    name: xe-utils
-    version: 3.5.4
-    dev: false
 
   registry.npmmirror.com/zrender/5.3.1:
     resolution: {integrity: sha512-7olqIjy0gWfznKr6vgfnGBk7y4UtdMvdwFmK92vVQsQeDPyzkHW1OlrLEKg6GHz1W5ePf0FeN1q2vkl/HFqhXw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/zrender/-/zrender-5.3.1.tgz}

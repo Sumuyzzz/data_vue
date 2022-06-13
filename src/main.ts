@@ -2,10 +2,11 @@ import { createApp } from 'vue'
 import App from './view/App.vue'
 import ECharts from 'vue-echarts'
 import { use } from "echarts/core"
-import 'xe-utils'
-import VXETable from 'vxe-table'
-import 'vxe-table/lib/style.css'
+
+import vue3SeamlessScroll from "vue3-seamless-scroll";
 import './assets/style/normalize.css'
+
+
 
 import {
   CanvasRenderer
@@ -28,15 +29,13 @@ import {
 
 const app = createApp(App)
 
-function useTable() {
-  app.use(VXETable)
-}
+
 
 use([
   TitleComponent,
   CanvasRenderer,
   BarChart,
-  PieChart ,
+  PieChart,
   GridComponent,
   TooltipComponent,
   LegendComponent,
@@ -45,7 +44,6 @@ use([
   ScatterChart,
   VisualMapComponent,
   EffectScatterChart,
-  useTable
 ])
 
 
@@ -53,7 +51,7 @@ use([
 
 
 
-
+app.use(vue3SeamlessScroll);
 
 app.component('v-chart', ECharts)
 app.mount('#app')

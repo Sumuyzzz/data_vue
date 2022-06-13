@@ -9,6 +9,8 @@ declare module '@vue/runtime-core' {
     Chart2: typeof import('./src/components/Chart2.vue')['default']
     Chart3: typeof import('./src/components/Chart3.vue')['default']
     Chart4: typeof import('./src/components/Chart4.vue')['default']
+    Chart5: typeof import('./src/components/Chart5.vue')['default']
+    Chart6: typeof import('./src/components/Chart6.vue')['default']
     Map: typeof import('./src/components/Map.vue')['default']
     MapList: typeof import('./src/components/MapList.vue')['default']
   }
