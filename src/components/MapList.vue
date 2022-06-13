@@ -9,7 +9,6 @@
       </tr>
     </thead>
     <tbody class="body">
-      <vue3-seamless-scroll :list="items" class="scroll">
         <tr class="first">
           <td v-for="th in thead">
             {{ th }}
@@ -25,7 +24,6 @@
             </button>
           </td>
         </tr>
-      </vue3-seamless-scroll>
     </tbody>
   </table>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>物联网平台</h1>
+    <h1>设备管理平台</h1>
   </header>
 </template>
 

@@ -21,11 +21,11 @@
       </div>
     </div>
     <div class="right-charts">
-      <div class="chart1 chart">
+      <div class="chart1 chart ">
         <Chart4></Chart4>
       </div>
-      <div class="chart2 chart">
-        <!-- <Chart5></Chart5> -->
+      <div class="chart2 chart wrapper">
+        <Chart5></Chart5>
       </div>
       <div class="chart3 chart">
         <Chart6></Chart6>
@@ -83,6 +83,10 @@ main {
     }
   }
 
+
+.wrapper{
+  overflow: hidden;
+}
 
   .chart {
     border: 1px solid #2495b9;

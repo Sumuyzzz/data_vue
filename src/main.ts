@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import App from './view/App.vue'
 import ECharts from 'vue-echarts'
 import { use } from "echarts/core"
-
 import vue3SeamlessScroll from "vue3-seamless-scroll";
 import './assets/style/normalize.css'
 
@@ -52,6 +51,5 @@ use([
 
 
 app.use(vue3SeamlessScroll);
-
 app.component('v-chart', ECharts)
 app.mount('#app')

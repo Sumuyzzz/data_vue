@@ -1,6 +1,6 @@
 <template>
 
-    <v-chart :option="option"></v-chart>
+  <v-chart :option="options" :autoresize="true"></v-chart>
 
 </template>
 
@@ -85,27 +85,39 @@ var percent = 1;
 
 
 
+let options = ref({
+  tooltip: {
+    formatter: "{a} <br/>{b} : {c}%"
+  },
+  series: [
+    {
+      name: '2019-02-12 任务分析',
+      type: 'gauge',
+      detail: { formatter: '{value}%' },
+      data: [{ value: 87.5, name: '分析成功率' }]
+    }
+  ]
+})
 
 
 
 
+    // setInterval(function () {
+    //   if (percent === 100) {
+    //     percent = 0;
+    //   } else {
+    //     ++percent;
+    //   }
 
-    setInterval(function () {
-      if (percent === 100) {
-        percent = 0;
-      } else {
-        ++percent;
-      }
+    //   option.value.title = {
+    //     text: '故障率\n' +percent + '%'
+    //   }
 
-      option.value.title = {
-        text: '故障率\n' +percent + '%'
-      }
-
-      option.value.series = [{
-        name: 'main',
-        data: getData()
-      }]
-    }, 100);
+    //   option.value.series = [{
+    //     name: 'main',
+    //     data: getData()
+    //   }]
+    // }, 100);
 </script>
 
 <style lang="scss" scoped>
