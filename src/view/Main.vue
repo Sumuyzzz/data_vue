@@ -71,9 +71,10 @@ main {
     gap: 30px;
 
     .map-list {
-      height: 240px;
+      height: 250px;
       display: flex;
       justify-content: center;
+      overflow:hidden;
 
     }
 

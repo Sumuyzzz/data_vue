@@ -21,6 +21,7 @@ let option = ref({
   tooltip: {
     trigger: 'item'
   },
+
   legend: {
     top: '5%',
     left: 'center',
@@ -32,22 +33,14 @@ let option = ref({
     {
       name: 'Access From',
       type: 'pie',
-      radius: ['20%', '50%'],
+      radius: ['40%', '60%'],
       avoidLabelOverlap: false,
+      itemStyle: {
+        borderWidth: 2
+      },
       label: {
-        show: true,
-        position: 'outside',
-        color: '#fff'
-      },
-      emphasis: {
-        label: {
-          show: true,
-          fontSize: '40',
-          fontWeight: 'bold'
-        }
-      },
-      labelLine: {
-        show: false
+        show: false,
+        position: 'center'
       },
 
       data:data

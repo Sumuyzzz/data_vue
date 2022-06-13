@@ -9,8 +9,6 @@
       </tr>
     </thead>
     <tbody class="body">
-
-
       <vue3-seamless-scroll :list="items" class="scroll">
         <tr class="first">
           <td v-for="th in thead">
@@ -28,8 +26,6 @@
           </td>
         </tr>
       </vue3-seamless-scroll>
-
-
     </tbody>
   </table>
 </template>
@@ -63,6 +59,25 @@ const items = [{
   device: 400,
   stronghold: 5000,
   alarm: "无"
+},
+{
+  name: "宝钢",
+  value: 200,
+  device: 400,
+  stronghold: 5000,
+  alarm: "无"
+}, {
+  name: "造纸厂",
+  value: 3000,
+  device: 2000,
+  stronghold: 1000,
+  alarm: "温度上限报警>120"
+}, {
+  name: "宝钢",
+  value: 200,
+  device: 400,
+  stronghold: 5000,
+  alarm: "无"
 }]
 
 const buttons = [
@@ -78,19 +93,15 @@ const buttons = [
 </script>
 
 <style lang="scss" scoped>
-
-
-
-
-
-
 .body {
-
   text-align: center;
 
 }
 
+table {
+  overflow: hidden;
 
+}
 
 
 
@@ -103,17 +114,6 @@ td {
 }
 
 
-ul{ 
-
-  list-style: none;
-  padding: 0;
-  display: flex;
-  font-size: 18px;;
-  li{
-    border: 1px solid #4e7298;
-    margin: 0;
-  }
-}
 th {
   background: #017197;
 }
@@ -125,12 +125,8 @@ th {
 }
 
 
-.scroll{
-overflow:hidden;
-width: 100%;
-  border: 1px solid red;
-  display: flex;
-  justify-content:center;
+.scroll {
+  overflow: hidden;
 }
 
 button {
