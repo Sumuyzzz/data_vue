@@ -1,39 +1,22 @@
 <template>
-<v-chart :option="option"></v-chart>
+  <v-chart :option="option"></v-chart>
 </template>
 
 <script setup>
 import VChart from "vue-echarts"
+import * as echarts from 'echarts';
+
+
+let data1 = [Math.random() * 100];
+let data2 = [Math.random() * 200];
+
+var base = +new Date();
+var oneDay = 24 * 3600 * 1000;
+var date = [];
+var now = new Date(base);
 
 
 const option = ref({
-  xAxis: {
-    type: 'category',
-    boundaryGap: false,
-    data: date
-  },
-  yAxis: {
-    boundaryGap: [0, '50%'],
-    type: 'value'
-  },
-  series: [
-    {
-      name: '成交',
-      type: 'line',
-      smooth: true,
-      symbol: 'none',
-      stack: 'a',
-      areaStyle: {
-        normal: {}
-      },
-      data: data
-    }
-  ]
-})
-
-
-
-const xxx = {
   backgroundColor: 'rgba(1,202,217,.2)',
   grid: {
     left: 60,
@@ -108,7 +91,6 @@ const xxx = {
     }
   ],
   series: [
-
     {
       name: '处理数',
       type: 'bar',
@@ -123,7 +105,7 @@ const xxx = {
           )
         }
       },
-      data: data
+      data: data1
     },
     {
       name: '报警数',
@@ -139,26 +121,27 @@ const xxx = {
           )
         }
       },
-      yAxisIndex: 1,
-      data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+      data: data2
     }
   ]
-};
+})
 
 
 
-var base = +new Date(2014, 9, 3);
-var oneDay = 24 * 3600 * 1000;
-var date = [];
-var data = [Math.random() * 150];
-var now = new Date(base);
+
+
+
+
+
 function addData(shift) {
   now = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/');
   date.push(now);
-  data.push((Math.random() - 0.4) * 10 + data[data.length - 1]);
+  data1.push((Math.random() - 0.4) * 10 + data1[data1.length - 1]);
+  data2.push((Math.random() - 0.4) * 20 + data2[data2.length - 1]);
   if (shift) {
     date.shift();
-    data.shift();
+    data1.shift();
+    data2.shift();
   }
   now = new Date(+new Date(now) + oneDay);
 }
@@ -168,18 +151,22 @@ for (var i = 1;i < 100;i++) {
 
 setInterval(function () {
   addData(true);
-option.value= {
+  option.value = {
     xAxis: {
       data: date
     },
     series: [
       {
-        name: '成交',
-        data: data
+        name: '报警数',
+        data: data2
+      },
+      {
+        name: '处理数',
+        data: data1
       }
     ]
   };
-}, 500);
+}, 1000);
 
 
 
@@ -187,5 +174,4 @@ option.value= {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

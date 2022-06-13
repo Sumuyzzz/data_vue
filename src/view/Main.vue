@@ -28,7 +28,7 @@
         <!-- <Chart5></Chart5> -->
       </div>
       <div class="chart3 chart">
-        <!-- <Chart6></Chart6> -->
+        <Chart6></Chart6>
       </div>
     </div>
   </main>
