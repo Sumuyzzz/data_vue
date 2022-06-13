@@ -27,7 +27,6 @@ const sortData = () => convertData(
 
 
 let option = ref({
-
   title: {
     text: '平台数据分布',
     subtext: '数据仅限参考',

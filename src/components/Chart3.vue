@@ -5,7 +5,6 @@
 <script setup>
 import VChart from "vue-echarts"
 import { ref } from "vue"
-import * as echarts from "echarts"
 
 
 
@@ -18,69 +17,98 @@ for (let i = 0;i < 5;++i) {
 
 const option = ref({
   title: {
-    text: '接入工厂类型',
+    text: '工厂接入类型',
     textStyle: {
       color: '#fff'
     },
+    top: '20',
     left: '60'
   },
-  color: ['#7ecef4'],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {
+    textStyle: {
+      color: '#fff'
+    },
+    top: '60'
+  },
   grid: {
-    left: 40,
-    right: 20,
-    top: 30,
-    bottom: 0,
-    containLabel: true
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true,
+    height: '200'
   },
   xAxis: {
-    type: 'value',
-    axisLine: {
-      lineStyle: {
-        color: 'rgba(255,255,255,0)'
-      }
-    },
-    splitLine: {
-      lineStyle: {
-        color: 'rgba(255,255,255,0)'
-      }
-    },
-    axisLabel: {
-      color: "rgba(255,255,255,0)"
-    },
-    boundaryGap: [0, 0.01]
+    type: 'value'
   },
   yAxis: {
     type: 'category',
-    axisLine: {
-      lineStyle: {
-        color: 'rgba(255,255,255,.5)'
-      }
-    },
-    splitLine: {
-      lineStyle: {
-        color: 'rgba(255,255,255,.1)'
-      }
-    },
-    axisLabel: {
-      color: "rgba(255,255,255,.5)"
-    },
     data: ['锅炉', '环保', '电厂', '供需', '采掘']
   },
   series: [
     {
-      name: '2022年',
+      name: '2020',
       type: 'bar',
-      barWidth: 20,
-      itemStyle: {
-        normal: {
-          color: new echarts.graphic.LinearGradient(
-            1, 0, 0, 1,
-            [
-              { offset: 0, color: 'rgba(230,253,139,.7)' },
-              { offset: 1, color: 'rgba(41,220,205,.7)' }
-            ]
-          )
-        }
+      stack: 'total',
+      label: {
+        show: true
+      },
+      barWidth: '15',
+      emphasis: {
+        focus: 'series'
+      },
+      data: data
+    },
+    {
+      name: '2021',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: data
+    },
+    {
+      name: '2022',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: data
+    },
+    {
+      name: '2023',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: data
+    },
+    {
+      name: '2024',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
       },
       data: data
     }
@@ -89,15 +117,15 @@ const option = ref({
 
 
 
-
+let xxx = option.value.series.map(i => i.data)
+console.log(xxx);
 const update = () => {
-
   let data = option.value.series[0].data
   for (var i = 0;i < data.length;++i) {
     if (Math.random() > 0.9) {
-      data[i] += Math.round(Math.random() * 2000);
-    } else {
       data[i] += Math.round(Math.random() * 200);
+    } else {
+      data[i] += Math.round(Math.random() * 20);
     }
   }
 

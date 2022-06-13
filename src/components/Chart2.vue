@@ -17,6 +17,7 @@ const data = [
 const option = ref({
   title: {
     text: '设备在线状态',
+    top:'20',
     left: 'center',
     textStyle: {
       color: '#fff'
@@ -34,7 +35,6 @@ const option = ref({
       radius: [30, 60],
       center: ['50%', '50%'],
       roseType: 'area',
-
       label: {
         textStyle: {
           color: '#fff'
