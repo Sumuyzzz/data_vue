@@ -1,6 +1,6 @@
 <template>
 
-  <v-chart :option="options" :autoresize="true"></v-chart>
+  <v-chart :option="option" :autoresize="true"></v-chart>
 
 </template>
 
@@ -8,122 +8,156 @@
 import { ref } from "vue";
 import VChart from "vue-echarts"
 
-var percent = 1;
 
-    function getData() {
-      return [{
-        value: percent,
-        itemStyle: {
-          normal: {
-            color: 'red',
-            shadowBlur: 10,
-            shadowColor: '#0c142'
-          }
-        }
-      }, {
-        value: 100 - percent,
-        itemStyle: {
-          normal: {
-            color: 'transparent'
-          }
-        }
-      }];
-    }
 
-    let option = ref({
-      title: {
-        text: '故障率\n'+ (percent * 1) + '%',
-        x: 'center',
-        y: 'center',
-        textStyle: {
-          color: '#fff',
-          fontWeight: 'bolder',
-          fontSize: 12,
-        }
-      },
-      series: [
+var highlight = '#03b7c9';
+
+var demoData = [
+  { name: '故障率', value: 50, unit: '%', pos: ['50%', '55%'], range: [0, 100] },
+];
+
+let option = ref({
+  series: (function () {
+    var result = [];
+    demoData.forEach(function (item) {
+      result.push(
         {
-          name: 'main',
-          type: 'pie',
-          radius: ['50%', '51%'],
-          label: {
-          
-            normal: {
-              show: false,
-            }
+          type: 'gauge',
+          center: item.pos,
+          splitNumber: item.splitNum || 10,
+          min: item.range[0],
+          max: item.range[1],
+          startAngle: 225,
+          endAngle: -45,
+          axisLine: {
+            show: true,
+            lineStyle: {
+              width: 2,
+              shadowBlur: 0,
+              color: [[1, highlight]],
+            },
           },
-          data: getData(),
-          animationEasingUpdate: 'cubicInOut',
-          animationDurationUpdate: 100,
+          axisTick: {
+            show: true,
+            lineStyle: {
+              color: highlight,
+              width: 1,
+            },
+            length: -5,
+            splitNumber: 10,
+          },
+          splitLine: {
+            show: true,
+            length: -14,
+            lineStyle: {
+              color: highlight,
+            },
+          },
+          axisLabel: {
+            distance: -20,
+            textStyle: {
+              color: highlight,
+              fontSize: '14',
+              fontWeight: 'bold',
+            },
+          },
+          pointer: {
+            show: 0,
+          },
+          detail: {
+            show: 0,
+          },
         },
         {
-          type: 'pie',
-          radius: ['39%', '49%'],
-          silent: true,
-          label: {
-            normal: {
-              show: false,
-            }
+          name: item.name,
+          type: 'gauge',
+          center: item.pos,
+          radius: '30.33%',
+          startAngle: 225,
+          endAngle: -45,
+          min: item.range[0],
+          max: item.range[1],
+          axisLine: {
+            show: true,
+            lineStyle: {
+              width: 16,
+              color: [[1, 'rgba(255,255,255,.1)']],
+            },
           },
-
-          data: [{
-            value: 1,
+          axisTick: {
+            show: 0,
+          },
+          splitLine: {
+            show: 0,
+          },
+          axisLabel: {
+            show: 0,
+          },
+          pointer: {
+            show: true,
+            length: '105%',
+          },
+          detail: {
+            show: true,
+            offsetCenter: [0, '100%'],
+            textStyle: {
+              fontSize: 20,
+              color: '#fff',
+            },
+            formatter: ['{value} ' + (item.unit || ''), '{name|' + item.name + '}'].join('\n'),
+            rich: {
+              name: {
+                fontSize: 14,
+                lineHeight: 30,
+                color: '#ddd',
+              },
+            },
+          },
+          itemStyle: {
+            normal: {
+              color: highlight,
+            },
+          },
+          data: [
+            {
+              value: item.value,
+            },
+          ],
+          anchor: {
+            show: true,
+            showAbove: true,
+            size: 24,
             itemStyle: {
-              normal: {
-                color: '#313443',
-                shadowBlur: 100,
-                shadowColor: '#1b1e25',
-
-              }
-            }
-          }],
-
-
-        },
-      ]
-    })
-
-
-
-let options = ref({
-  tooltip: {
-    formatter: "{a} <br/>{b} : {c}%"
-  },
-  series: [
-    {
-      name: '2019-02-12 任务分析',
-      type: 'gauge',
-      detail: { formatter: '{value}%' },
-      data: [{ value: 87.5, name: '分析成功率' }]
-    }
-  ]
+              color: '#fff',
+            },
+          },
+        }
+      );
+    });
+    return result;
+  })(),
 })
 
 
+const randomNumber = () => Math.floor(Math.random() * 100)
 
-
-    // setInterval(function () {
-    //   if (percent === 100) {
-    //     percent = 0;
-    //   } else {
-    //     ++percent;
-    //   }
-
-    //   option.value.title = {
-    //     text: '故障率\n' +percent + '%'
-    //   }
-
-    //   option.value.series = [{
-    //     name: 'main',
-    //     data: getData()
-    //   }]
-    // }, 100);
-</script>
-
-<style lang="scss" scoped>
-.charts{
-  display:flex;
+const update = () => {
+  option.value.series[1].data[0].value = randomNumber()
 }
 
 
+setInterval(update, 1000)
+
+
+
+
+
+
+
+</script>
+
+<style lang="scss" scoped>
+.charts {
+  display: flex;
+}
 </style>

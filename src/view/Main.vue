@@ -14,6 +14,7 @@
     <div class="wrapper-map">
       <div class="map chart">
         <Map></Map>
+
       </div>
       <div class="map-list chart">
         <map-list></map-list>
@@ -21,13 +22,13 @@
       </div>
     </div>
     <div class="right-charts">
-      <div class="chart1 chart ">
+      <div class="chart4 chart ">
         <Chart4></Chart4>
       </div>
-      <div class="chart2 chart wrapper">
+      <div class="chart5 chart ">
         <Chart5></Chart5>
       </div>
-      <div class="chart3 chart">
+      <div class="chart6 chart">
         <Chart6></Chart6>
       </div>
     </div>
@@ -47,6 +48,7 @@ import MapList from "@/components/MapList.vue"
 </script>
 
 <style lang="scss" scoped>
+
 main {
   gap: 30px;
   display: flex;
@@ -62,7 +64,6 @@ main {
     flex-direction: column;
     gap: 30px 0px;
   }
-
 
   .wrapper-map {
     flex: 1;
@@ -108,5 +109,17 @@ main {
     height: 400px;
   }
 
+
+.chart4{
+  height:250px;
+}
+
+.chart5 {
+  height:200px;
+}
+
+.chart6 {
+  height: 400px;
+}
 }
 </style>

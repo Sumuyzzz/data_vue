@@ -3,10 +3,6 @@
     <div class="title">
       <Icon icon="ep:warning-filled" color="red" />
       <div>{{ "报警记录" }}</div>
-
-
-
-
     </div>
     <vue3-seamless-scroll :list="list" class="scroll">
       <ul class="item" v-for="(item, index) in list" :key="index">
@@ -71,7 +67,7 @@ const list = ref([{
 
 .wrapper {
   overflow: hidden;
-  height: 400px;
+  height: 200px;
           
 
 .title{
