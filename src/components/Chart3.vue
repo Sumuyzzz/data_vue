@@ -1,5 +1,5 @@
 <template>
-<v-chart :option="option"></v-chart>
+  <v-chart :option="option"></v-chart>
 </template>
 
 <script setup>
@@ -9,7 +9,7 @@ import * as echarts from "echarts"
 
 
 
-let data =[]
+let data = []
 
 
 for (let i = 0;i < 5;++i) {
@@ -18,7 +18,11 @@ for (let i = 0;i < 5;++i) {
 
 const option = ref({
   title: {
-    
+    text: '接入工厂类型',
+    textStyle: {
+      color: '#fff'
+    },
+    left: '60'
   },
   color: ['#7ecef4'],
   grid: {
@@ -28,7 +32,6 @@ const option = ref({
     bottom: 0,
     containLabel: true
   },
-
   xAxis: {
     type: 'value',
     axisLine: {
@@ -106,5 +109,4 @@ setInterval(function () {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
