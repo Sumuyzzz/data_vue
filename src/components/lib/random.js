@@ -1,4 +1,4 @@
-const randomNumber = () => Math.floor(Math.random() * 100)
+const randomNumber = () => Math.round(Math.random() * 100)
 
 
 const updated = () => {
@@ -11,3 +11,11 @@ setInterval(() => {
 }, 1000)
 
 
+const getRandomColor = function () {
+  return '#' + (function (color) {
+    return (color += '0123456789abcdef'[Math.floor(Math.random() * 16)])
+      && (color.length == 6) ? color : arguments.callee(color);
+  })('');
+} 
+
+export {randomNumber,getRandomColor}
